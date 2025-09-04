@@ -1,81 +1,30 @@
-# junevergelquerol.com
+# basehub-blog
 
-Personal website for June Vergel Querol
+*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/julian/v0-basehub-blog)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/wScF0riJ6Hd)
 
 ## Overview
 
-This is a static website built with HTML, CSS, and JavaScript, designed to be deployed on GitHub Pages and integrated with Cloudflare.
-
-## Structure
-
-```
-junevergelquerol.com/
-├── index.html          # Main homepage
-├── assets/             # Static assets
-│   ├── style.css       # Main stylesheet
-│   └── script.js       # JavaScript functionality
-├── pages/              # Additional pages (if needed)
-└── README.md          # This file
-```
-
-## Features
-
-- Responsive design that works on desktop and mobile
-- Smooth scrolling navigation
-- Modern CSS with gradient hero section
-- JavaScript animations and interactions
-- SEO-friendly structure
-- Clean, professional design
-
-## Development
-
-To work on this website locally:
-
-1. Open `index.html` in your browser
-2. Make changes to HTML, CSS, or JavaScript files
-3. Refresh browser to see changes
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
 ## Deployment
 
-### GitHub Pages
-This site is configured for GitHub Pages deployment from the main branch.
+Your project is live at:
 
-### Cloudflare Integration
-Domain managed through Cloudflare for:
-- DNS management
-- SSL/TLS encryption
-- CDN acceleration
-- Security features
+**[https://vercel.com/julian/v0-basehub-blog](https://vercel.com/julian/v0-basehub-blog)**
 
-## Customization
+## Build your app
 
-### Content
-- Edit `index.html` to update content
-- Modify the About, Projects, and Contact sections
-- Add your personal information and projects
+Continue building your app on:
 
-### Styling
-- Update `assets/style.css` for design changes
-- Colors, fonts, and layouts can be customized
-- Responsive breakpoints are already configured
+**[https://v0.dev/chat/projects/wScF0riJ6Hd](https://v0.dev/chat/projects/wScF0riJ6Hd)**
 
-### Functionality
-- Enhance `assets/script.js` for additional features
-- Current features include smooth scrolling and fade animations
+## How It Works
 
-## Technologies Used
-
-- HTML5
-- CSS3 (with Flexbox and Grid)
-- Vanilla JavaScript
-- Responsive Web Design principles
-
-## Browser Support
-
-This website supports all modern browsers including:
-- Chrome, Firefox, Safari, Edge
-- Mobile browsers on iOS and Android
-
-## License
-
-© 2025 June Vergel Querol. All rights reserved.
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository
