@@ -1,80 +1,56 @@
-import { basehub } from "basehub"
 import { Intro } from "./components/intro"
-import { HeroPost, PostMetaFragment } from "./components/hero-post"
-import { MoreStories } from "./components/more-stories"
-import { Newsletter } from "./components/newsletter"
+import { PortfolioContent } from "./components/portfolio-content"
+import Footer from "./components/footer"
 import type { Metadata } from "next"
-import "../basehub.config"
 
-export const dynamic = "force-static"
-export const revalidate = 30
-
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await basehub().query({
-    meta: {
-      title: true,
-      description: true,
-      ogImage: {
-        url: true,
-      },
-    },
-  })
-
-  return {
-    title: data.meta?.title || `BaseHub x v0 Example`,
-    description: data.meta?.description || `This is a blog built with BaseHub and v0.`,
-    generator: "v0.dev",
-    openGraph: {
-      title: data.meta?.title || `BaseHub x v0 Example`,
-      description: data.meta?.description || `This is a blog built with BaseHub and v0.`,
-      images: data.meta?.ogImage?.url
-        ? [
-            {
-              url: data.meta.ogImage.url,
-              width: 1200,
-              height: 630,
-              alt: data.meta?.title || `BaseHub x v0 Example`,
-            },
-          ]
-        : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: data.meta?.title || `BaseHub x v0 Example`,
-      description: data.meta?.description || `This is a blog built with BaseHub and v0.`,
-      images: data.meta?.ogImage?.url ? [data.meta.ogImage.url] : [],
-    },
-  }
+export const metadata: Metadata = {
+  title: "June Vergel Querol - Technology Leader & Computer Engineer | Professional Portfolio",
+  description: "June Vergel Querol's professional portfolio - Technology leader and computer engineer specializing in educational technology, web development, and digital transformation. Explore free online utilities and tools.",
+  keywords: "June Vergel Querol, ICT Head, Part-time Instructor, Computer Engineer, Educational Technology, Web Development, Digital Transformation, Free Online Tools, Utilities, Philippines, Tuguegarao",
+  openGraph: {
+    title: "June Vergel Querol - Technology Leader & Computer Engineer",
+    description: "Professional portfolio featuring educational technology expertise, web development projects, and free online utilities for productivity and development.",
+    images: ["/professional-id.png"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "June Vergel Querol - Technology Leader & Computer Engineer",
+    description: "Professional portfolio featuring educational technology expertise, web development projects, and free online utilities for productivity and development.",
+    images: ["/professional-id.png"]
+  },
 }
 
-export default async function Page() {
-  const data = await basehub().query({
-    blog: {
-      morePosts: true,
-      posts: {
-        __args: { orderBy: "date__DESC" },
-        items: PostMetaFragment,
-      },
-    },
-    newsletter: {
-      subscribers: {
-        ingestKey: true,
-        schema: true,
-      },
-    },
-  })
-
-  const heroPost = data.blog.posts.items[0]
-  const morePosts = data.blog.posts.items.slice(1)
-
+export default function Page() {
   return (
     <main>
+      {/* Top Navigation Bar */}
+      <div className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-5 py-4">
+          <div className="flex justify-between items-center">
+            <div className="font-semibold text-lg">June Vergel Querol</div>
+            <div className="flex gap-3">
+              <a 
+                href="/journal" 
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full font-medium transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                📝 Daily Journal
+              </a>
+              <a 
+                href="/utilities" 
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-4 py-2 rounded-full font-medium transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                🛠️ Utilities
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="container mx-auto px-5">
         <Intro />
-        {heroPost && <HeroPost {...heroPost} />}
-        <MoreStories morePosts={morePosts} title={data.blog.morePosts} />
+        <PortfolioContent />
       </section>
-      <Newsletter newsletter={data.newsletter.subscribers} />
+      <Footer />
     </main>
   )
 }

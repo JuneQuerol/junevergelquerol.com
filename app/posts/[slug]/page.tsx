@@ -41,7 +41,7 @@ export async function generateMetadata({
   const postTitle = post._title
   const postDescription = post.excerpt
   const postOgImage = post.coverImage?.url
-  const siteTitle = postData.meta?.title || `BaseHub x v0 Example`
+  const siteTitle = postData.meta?.title || `June Vergel Querol - Professional Journal`
 
   return {
     title: `${postTitle} | ${siteTitle}`,

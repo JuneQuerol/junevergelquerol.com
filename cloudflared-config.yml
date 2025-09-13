@@ -1,0 +1,25 @@
+tunnel: 3de57c95-324b-44cc-b6cd-bd97d02f12de
+credentials-file: C:\Users\USER\.cloudflared\3de57c95-324b-44cc-b6cd-bd97d02f12de.json
+
+ingress:
+  - hostname: junevergelquerol.com
+    service: http://localhost:3001
+    originRequest:
+      connectTimeout: 60s
+      tlsTimeout: 60s
+      tcpKeepAlive: 60s
+      keepAliveTimeout: 90s
+      httpHostHeader: localhost:3001
+      noTLSVerify: true
+      disableChunkedEncoding: false
+  - hostname: www.junevergelquerol.com
+    service: http://localhost:3001
+    originRequest:
+      connectTimeout: 60s
+      tlsTimeout: 60s
+      tcpKeepAlive: 60s
+      keepAliveTimeout: 90s
+      httpHostHeader: localhost:3001
+      noTLSVerify: true
+      disableChunkedEncoding: false
+  - service: http_status:404

@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow important sections
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /utilities/
+Allow: /journal
+
+# Disallow admin or sensitive directories
+Disallow: /_next/static/
+Disallow: /_next/webpack-hmr
+Disallow: /api/
+
+# Specific bot optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block problematic bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://junevergelquerol.com/sitemap.xml
+
+# Host directive for preferred domain
+Host: junevergelquerol.com
